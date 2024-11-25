@@ -1,0 +1,291 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+/* Header Content */
+header {
+    background-color: #f4f8fb;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows stacking for smaller screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Title and Navbar Container */
+.nav-and-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the title, subtitle, and navbar */
+    flex-grow: 1; /* Ensures the container fills the available space */
+    text-align: center;
+}
+
+.title-container h1 {
+    font-size: 2rem;
+    color: #333399; /* Dark blue for the title */
+    margin: 0;
+}
+
+.title-container p {
+    font-size: 1.2rem;
+    color: #668cd9; /* Light blue for the subtitle */
+    margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    margin-top: 15px;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0; /* No gap between buttons */
+    border: 1px solid #000; /* Border for the entire navbar */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures border radius applies to all buttons */
+}
+
+.navbar ul li {
+    flex: 1; /* Ensures all buttons have equal width */
+    
+}
+
+.navbar ul li a {
+    display: block; /* Ensures the full button area is clickable */
+    text-decoration: none;
+    text-align: center; /* Centers the text horizontally */
+    padding: 10px 0; /* Consistent padding for text inside buttons */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333399; /* Dark blue text */
+    background-color: #acc9f2; /* Light blue buttons */
+    transition: background-color 0.3s, color 0.3s;
+    border-right: 1px solid black; /* Separator between buttons */
+    border: black solid 1px;
+}
+
+.navbar ul li:last-child a {
+    border-right: none; /* Removes the border on the last button */
+}
+
+.navbar ul li a.active {
+    background-color: #333399; /* Dark blue background for active */
+    color: white;
+}
+
+.navbar ul li a.donate {
+    background-color: #4caf50; /* Green for Donate button */
+    color: white;
+}
+
+.navbar ul li a:hover {
+    background-color: #668cd9; /* Medium blue on hover */
+    color: white;
+}
+
+.navbar ul li a.donate:hover {
+    background-color: #04500e; /* Darker green for Donate button */
+    color: white;
+}
+
+.navbar ul li a.active:hover {
+    background-color: #4c4cff; /* Brighter blue for active on hover */
+    color: white;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background-color: #e6f3ff; /* Light blue background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+.welcome-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-text {
+    flex: 1;
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.welcome-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Slideshow Section */
+.slideshow-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.slideshow-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.slide {
+    display: none; /* Hide all slides by default */
+    text-align: center;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center the text vertically */
+    justify-content: space-between; /* Ensure spacing between the image and text */
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.slide p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    padding-left: 20px; /* Add some space between the image and the text */
+}
+
+/* Navigation Arrows */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333399; /* Dark blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+/* Move arrows outside the boundary */
+button.prev {
+    left: -60px; /* Position outside the left boundary */
+}
+
+button.next {
+    right: -60px; /* Position outside the right boundary */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: #4a90e2; /* Lighter blue on hover */
+}
+
+/* Active Slide */
+.slide.active {
+    display: block; /* Only display the active slide */
+}
+
+
+/* Footer */
+footer {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+
+
+
+/* About Section */
+.about-section {
+    background-color: #e6f3ff; /* Light blue background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-image img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 5px;
+}
